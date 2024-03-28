@@ -56,7 +56,7 @@ window.onload = async function () {
 
   stopRecord.onclick = function () {
     stopRecord.style.display = "none";
-    finalStep.style.display = "inline";
+    finalStep.style.display = "flex";
     mediaRecorder.stop();
   }
 }

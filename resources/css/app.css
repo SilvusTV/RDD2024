@@ -1,3 +1,6 @@
+@import url("https://use.typekit.net/umb5xsx.css");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +11,16 @@
 
 html,
 body {
+  font-family: "Open Sans", sans-serif;
   height: 100%;
   width: 100%;
+  background: black;
+  color: white;
+}
+.title{
+  font-family: "sloop-script-pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  margin-top: 1rem;
 }
