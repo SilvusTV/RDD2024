@@ -20,11 +20,11 @@ export function Record() {
             <p class={"text-xl m-4"}>Voulez vous sauvegarder la video ?</p>
             <span>
               <button id="saveRecord"
-                      className={"text-xl p-5 bg-green-500 rounded-xl m-4 hover:bg-green-400 cursor-pointer"}>
+                      class={"text-xl p-5 bg-green-500 rounded-xl m-4 hover:bg-green-400 cursor-pointer"}>
                 Sauvegarder
               </button>
             <button id="cancelRecord"
-                    className={"text-xl p-5 bg-red-500 rounded-xl m-4 hover:bg-red-400 cursor-pointer"}>
+                    class={"text-xl p-5 bg-red-500 rounded-xl m-4 hover:bg-red-400 cursor-pointer"}>
               Annuler
             </button>
             </span>

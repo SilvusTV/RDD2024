@@ -40,7 +40,6 @@ window.onload = async function () {
         // Sending our blob with our request
         body: data
       })
-        .then(response => console.log('Blob Uploaded'))
         .catch(err => console.log(err));
 
       startRecord.style.display = "inline";
