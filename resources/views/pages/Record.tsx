@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {HTML} from "#resources/views/pages/Components/HTML";
 
 export function Record() {

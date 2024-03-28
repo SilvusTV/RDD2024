@@ -11,7 +11,7 @@ export default function Home() {
           <a class={"p-9 bg-blue-500 rounded-xl m-9 hover:bg-blue-300 cursor-pointer"} href={"/record"}>
             Recorder
           </a>
-          <a class={"p-9 bg-blue-500 rounded-xl m-9 hover:bg-blue-300 cursor-pointer"} href={"/admin/screen/showVideo"}>
+          <a class={"p-9 bg-blue-500 rounded-xl m-9 hover:bg-blue-300 cursor-pointer"} href={"/admin/screen/showVideos"}>
             Screen
           </a>
         </div>
