@@ -1,11 +1,14 @@
 var video = document.querySelector("#video");
 var startRecord = document.querySelector("#startRecord");
 var stopRecord = document.querySelector("#stopRecord");
-var downloadLink = document.querySelector("#downloadLink");
+var finalStep = document.querySelector("#finalStep");
+var save = document.querySelector("#saveRecord");
+var cancel = document.querySelector("#cancelRecord");
 const dateTime = new Date().toISOString().replace(/:/g, '-')
 
 
 window.onload = async function () {
+  finalStep.style.display = "none";
   stopRecord.style.display = "none";
 
   const videoStream = await navigator.mediaDevices.getUserMedia({video: true, audio: true});
@@ -22,7 +25,7 @@ window.onload = async function () {
       blob.push(e.data);
     })
 
-    mediaRecorder.addEventListener('stop', function () {
+    save.addEventListener('click', function () {
       const video = new File(
         blob,
         `video-${dateTime}.mp4`,
@@ -40,16 +43,20 @@ window.onload = async function () {
         .then(response => console.log('Blob Uploaded'))
         .catch(err => console.log(err));
 
-      const link = URL.createObjectURL(new Blob(blob));
-      downloadLink.href = link
+      startRecord.style.display = "inline";
+      finalStep.style.display = "none";
+    })
+    cancel.addEventListener('click', function () {
+      startRecord.style.display = "inline";
+      finalStep.style.display = "none";
     })
 
     mediaRecorder.start();
   }
 
   stopRecord.onclick = function () {
-    startRecord.style.display = "inline";
     stopRecord.style.display = "none";
+    finalStep.style.display = "inline";
     mediaRecorder.stop();
   }
 }

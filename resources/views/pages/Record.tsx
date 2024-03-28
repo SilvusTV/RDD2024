@@ -10,9 +10,12 @@ export function Record() {
         <video id="video" width="854" height="480" autoplay muted class="justify-center"/>
         <div class={"flex gap-6 m-9"}>
           <button id="startRecord" class={"p-9 bg-blue-500 rounded-xl m-9 hover:bg-blue-300 cursor-pointer"}>Start Recording</button>
-          <button id="stopRecord" class={"p-9 bg-blue-500 rounded-xl m-9 hover:bg-blue-300 cursor-pointer"}>Stop Recording</button>
-          <button id="downloadLink2" ondblclick={""} class={"p-9 bg-blue-500 rounded-xl m-9 hover:bg-blue-300 cursor-pointer"}>Download Video</button>
-          <a id="downloadLink" download={"video.mp4"} class={"p-9 bg-blue-500 rounded-xl m-9 hover:bg-blue-300 cursor-pointer"}>Download Video</a>
+          <button id="stopRecord" class={"p-9 bg-red-500 rounded-xl m-9 hover:bg-red-300 cursor-pointer"}>Stop Recording</button>
+          <div id={"finalStep"}>
+            <p>Voulez vous sauvegarder la video ?</p>
+            <button id="saveRecord" class={"p-9 bg-green-500 rounded-xl m-9 hover:bg-green-300 cursor-pointer"}>Save Recording</button>
+            <button id="cancelRecord" class={"p-9 bg-red-500 rounded-xl m-9 hover:bg-red-300 cursor-pointer"}>Cancel Recording</button>
+          </div>
         </div>
       </div>
     </HTML>
