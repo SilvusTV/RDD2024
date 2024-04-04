@@ -3,12 +3,9 @@ import env from "#start/env";
 
 export default function ShowVideos() {
   const completeHost = `${env.get('HOST')}:${env.get('PORT')}`
-  const myHeaders = new Headers();
-  myHeaders.append("Cookie", "adonis-session=s%3AeyJtZXNzYWdlIjoiZ21ocnNyZzkxcGgwcHJvOTE4enZiaWZvIiwicHVycG9zZSI6ImFkb25pcy1zZXNzaW9uIn0.G2YT8vZ1580RQi0pjmrhWPrZ9lb76a7DJIssRGOsND4");
 
   const requestOptions: RequestInit = {
     method: "GET",
-    headers: myHeaders,
     redirect: "follow"
   };
 
