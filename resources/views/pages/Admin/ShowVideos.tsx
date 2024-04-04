@@ -57,7 +57,7 @@ export default function ShowVideos() {
       <div class={"flex flex-col gap-3 p-5 items-start"}>
         <h1>Récap des videos</h1>
         <p>Nombre de videos : {nbsVideo()}</p>
-        <a class={"p-2 bg-blue-500 rounded-xl hover:bg-blue-300 cursor-pointer"}>Afficher l'écan</a>
+        <a class={"p-2 bg-blue-500 rounded-xl hover:bg-blue-300 cursor-pointer"} href={"/admin/screen/bigScreen"}>Afficher l'écan</a>
         <p>{videoName()}</p>
       </div>
     </HTML>

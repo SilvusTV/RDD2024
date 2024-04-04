@@ -35,7 +35,7 @@ window.onload = async function () {
         const data = new FormData()
         data.append('video', video)
 
-        fetch('http://localhost:3333/send', {
+        fetch('http://rdd.silvus.me:3333/send', {
           // HTTP request type
           method: "POST",
           // Sending our blob with our request
