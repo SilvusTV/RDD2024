@@ -24,7 +24,7 @@ export default function ShowVideos() {
   }
 
   async function videoName() {
-    let resultList: Array<string>;
+    let resultList: Array<string> = [];
     await fetch(`http://${completeHost}/admin/getVideosList`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
