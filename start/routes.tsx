@@ -24,6 +24,6 @@ router.get('admin/screen/showVideos', ()=>{
   return <ShowVideos/>
 })
 
-router.get('/admin/getVideos',[videosController, 'getVideos'] )
+router.get('/admin/getVideosList',[videosController, 'getVideos'] )
 router.get('/admin/nbsVideos',[videosController, 'getNbsVideos'] )
 router.post('/send', [SendVideosController, 'upload'])
