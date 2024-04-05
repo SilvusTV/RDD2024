@@ -13,6 +13,7 @@ import {Record} from "#resources/views/pages/Record";
 import SendVideosController from "#controllers/send_videos_controller";
 import ShowVideos from "#resources/views/pages/Admin/ShowVideos";
 import videosController from "#controllers/videos_controller";
+import BigScreen from "#resources/views/pages/Admin/BigScreen";
 
 router.get('/', () => {
   return <Home/>
@@ -20,10 +21,12 @@ router.get('/', () => {
 router.get('/record', () => {
   return <Record/>
 })
-router.get('admin/screen/showVideos', ()=>{
+router.get('admin/screen/showVideos', () => {
   return <ShowVideos/>
 })
-
-router.get('/admin/getVideosList',[videosController, 'getVideos'] )
-router.get('/admin/nbsVideos',[videosController, 'getNbsVideos'] )
+router.get('admin/screen/bigScreen', () => {
+  return <BigScreen/>
+})
+router.get('/admin/getVideosList', [videosController, 'getVideos'])
+router.get('/admin/nbsVideos', [videosController, 'getNbsVideos'])
 router.post('/send', [SendVideosController, 'upload'])
