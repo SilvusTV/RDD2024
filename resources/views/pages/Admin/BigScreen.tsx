@@ -1,6 +1,5 @@
 import {HTML} from "#resources/views/pages/Components/HTML";
 import env from "#start/env";
-import {document, Document} from "postcss";
 
 export default function BigScreen() {
   const completeHost = `${env.get('HOST')}:${env.get('PORT')}`
@@ -13,7 +12,7 @@ export default function BigScreen() {
   };
 
   async function videoName() {
-    let resultList: Array<string>;
+    let resultList: Array<string> = [];
     await fetch(`http://${completeHost}/admin/getVideosList`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
