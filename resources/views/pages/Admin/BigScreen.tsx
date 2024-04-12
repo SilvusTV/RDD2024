@@ -1,12 +1,8 @@
 import {HTML} from "#resources/views/pages/Components/HTML";
-import {notReact} from "#resources/views/pages/Components/utils/notReact";
 import env from "#start/env";
-import clsx from "clsx";
 
 export default function BigScreen() {
   const completeHost = `${env.get('APIHOST')}:${env.get('PORT')}`
-  const [visible, setVisible] = notReact.useState(true);
-  const [isFinished, setIsFinished] = notReact.useState(false);
   const requestOptions: RequestInit = {
     method: "GET",
     redirect: "follow"
