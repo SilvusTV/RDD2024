@@ -44,8 +44,9 @@ window.onload = async function () {
           method: "POST",
           // Sending our video in our request
           body: data
-        })
-          .catch((err) => {
+        }).then(() => {
+          location.reload()
+        }).catch((err) => {
             console.log(err)
             location.reload()
           });
