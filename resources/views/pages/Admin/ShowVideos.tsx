@@ -2,7 +2,7 @@ import {HTML} from "#resources/views/pages/Components/HTML";
 import env from "#start/env";
 
 export default function ShowVideos() {
-  const completeHost = `${env.get('HOST')}:${env.get('PORT')}`
+  const completeHost = `${env.get('APIHOST')}:${env.get('PORT')}`
 
   const requestOptions: RequestInit = {
     method: "GET",

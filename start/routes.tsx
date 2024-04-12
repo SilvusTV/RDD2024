@@ -30,3 +30,4 @@ router.get('admin/screen/bigScreen', () => {
 router.get('/admin/getVideosList', [videosController, 'getVideos'])
 router.get('/admin/nbsVideos', [videosController, 'getNbsVideos'])
 router.post('/send', [SendVideosController, 'upload'])
+router.post('/remove', [SendVideosController, 'update'])

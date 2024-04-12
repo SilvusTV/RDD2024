@@ -1,3 +1,4 @@
+//Record JS var
 var video = document.querySelector("#video");
 var startRecord = document.querySelector("#startRecord");
 var stopRecord = document.querySelector("#stopRecord");
@@ -5,6 +6,10 @@ var finalStep = document.querySelector("#finalStep");
 var save = document.querySelector("#saveRecord");
 var cancel = document.querySelector("#cancelRecord");
 const dateTime = new Date().toISOString().replace(/:/g, '-')
+
+//BigScreen JS var
+var bigScreen = document.querySelector("#bigScreen");
+var bigScreenBack = document.querySelector("#bigScreenBack");
 
 
 window.onload = async function () {
@@ -34,15 +39,16 @@ window.onload = async function () {
         );
         const data = new FormData()
         data.append('video', video)
-
         fetch('http://rdd.silvus.me:3333/send', {
           // HTTP request type
           method: "POST",
-          // Sending our blob with our request
+          // Sending our video in our request
           body: data
         })
-          .catch(err => console.log(err));
-
+          .catch((err) => {
+            console.log(err)
+            location.reload()
+          });
         startRecord.style.display = "inline";
         finalStep.style.display = "none";
       })
@@ -60,4 +66,29 @@ window.onload = async function () {
       mediaRecorder.stop();
     }
   }
+  if (bigScreen || bigScreenBack) {
+    bigScreenBack.style.display = "none";
+    await sleep(5000).then(() => {
+      bigScreenBack.style.display = "flex";
+      bigScreen.play();
+    })
+    bigScreen.addEventListener('ended', () => {
+      bigScreenBack.style.display = "none";
+      const body = new FormData();
+      body.append("src", bigScreen.src);
+      fetch('http://rdd.silvus.me:3333/remove', {
+        method: "POST",
+        body: body
+      }).then(
+        () => {
+          location.reload()
+        }
+      )
+    })
+  }
+}
+
+async function sleep(ms) {
+  return new Promise(
+    (resolve) => setTimeout(resolve, ms));
 }

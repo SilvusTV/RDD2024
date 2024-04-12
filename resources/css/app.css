@@ -16,6 +16,7 @@ body {
   width: 100%;
   background: black;
   color: white;
+  overflow: hidden;
 }
 .title{
   font-family: "sloop-script-pro", sans-serif;
@@ -23,4 +24,15 @@ body {
   font-style: normal;
   font-size: 3rem;
   margin-top: 1rem;
+}
+video.screen {
+  width: 20vw;
+  height: 20vh;
+  object-fit: cover;
+}
+
+video.bigScreen {
+  width: 1024px;
+  height: 576px;
+  object-fit: cover;
 }
