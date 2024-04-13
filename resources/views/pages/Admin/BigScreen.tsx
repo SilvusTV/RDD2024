@@ -20,7 +20,7 @@ export default function BigScreen() {
       <div class={"w-screen h-screen flex flex-wrap flex-row content-start justify-center"}>
         {resultList.map((video) => {
           return (
-            <video class={"screen"} src={"http://content.rdd.silvus.me/" + video}></video>
+            <video class={"screen"} src={`http://${env.get('CONTENTS_PATH')}/${video}`}></video>
           )
         })}
       </div>
