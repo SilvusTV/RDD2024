@@ -10,7 +10,7 @@ export default function BigScreen() {
 
   async function videoName() {
     let resultList: Array<string> = [];
-    await fetch(`http://${completeHost}/admin/getVideosList`, requestOptions)
+    await fetch(`https://${completeHost}/admin/getVideosList`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         resultList = JSON.parse(result) as Array<string>
@@ -30,7 +30,7 @@ export default function BigScreen() {
   async function bigVideo() {
     let resultList: Array<string> = [];
     let video: string;
-    await fetch(`http://${completeHost}/admin/getVideosList`, requestOptions)
+    await fetch(`https://${completeHost}/admin/getVideosList`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         resultList = JSON.parse(result) as Array<string>

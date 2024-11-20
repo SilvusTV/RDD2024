@@ -11,7 +11,7 @@ export default function ShowVideos() {
 
   async function nbsVideo() {
     let resultNumber;
-    await fetch(`http://${completeHost}/admin/nbsVideos`, requestOptions)
+    await fetch(`https://${completeHost}/admin/nbsVideos`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         resultNumber = result
@@ -22,7 +22,7 @@ export default function ShowVideos() {
 
   async function videoName() {
     let resultList: Array<string> = [];
-    await fetch(`http://${completeHost}/admin/getVideosList`, requestOptions)
+    await fetch(`https://${completeHost}/admin/getVideosList`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         resultList = JSON.parse(result) as Array<string>
