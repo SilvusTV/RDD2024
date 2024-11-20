@@ -39,7 +39,7 @@ window.onload = async function () {
         );
         const data = new FormData()
         data.append('video', video)
-        fetch('http://rdd.silvus.me:3333/send', {
+        fetch('http://rdd.silvus.me/send', {
           // HTTP request type
           method: "POST",
           // Sending our video in our request
@@ -77,7 +77,7 @@ window.onload = async function () {
       bigScreenBack.style.display = "none";
       const body = new FormData();
       body.append("src", bigScreen.src);
-      fetch('http://rdd.silvus.me:3333/remove', {
+      fetch('http://rdd.silvus.me/remove', {
         method: "POST",
         body: body
       }).then(
