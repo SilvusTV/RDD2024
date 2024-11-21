@@ -3,6 +3,7 @@ import env from '#start/env'
 
 export default function BigScreen() {
   const completeHost = `${env.get('APIHOST')}`
+  const contentPath = `${env.get('CONTENTS_PATH')}`
   const http = env.get('HTTP')
   const requestOptions: RequestInit = {
     method: 'GET',
@@ -21,7 +22,7 @@ export default function BigScreen() {
       <div class={'w-screen h-screen flex flex-wrap flex-row content-start justify-center'}>
         {resultList.map((video) => {
           return (
-            <video class={'screen'} src={`http://${env.get('CONTENTS_PATH')}/${video}`}></video>
+            <video class={'screen'} src={`http://${contentPath}/${video}`}></video>
           )
         })}
       </div>
@@ -46,7 +47,8 @@ export default function BigScreen() {
         <video
           id={'bigScreen'}
           class={'bigScreen absolute'}
-          src={'http://content.rdd.silvus.me/' + video}
+          // src={'http://content.rdd.silvus.me/' + video}
+          src={`http://${contentPath}/${video}`}
         />
       </div>
     )
