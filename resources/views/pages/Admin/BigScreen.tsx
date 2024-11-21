@@ -2,7 +2,7 @@ import { HTML } from '#resources/views/pages/Components/HTML'
 import env from '#start/env'
 
 export default function BigScreen() {
-  const completeHost = `${env.get('APIHOST')}:${env.get('PORT')}`
+  const completeHost = `${env.get('APIHOST')}`
   const http = env.get('HTTP')
   const requestOptions: RequestInit = {
     method: 'GET',

@@ -10,42 +10,40 @@ export default function ShowVideos() {
   }
 
   async function nbsVideo() {
-    let resultNumber
-    await fetch(`${http}://${completeHost}/admin/nbsVideos`, requestOptions)
-      .then((response) => response.text())
-      .then((result) => {
-        resultNumber = result
-      })
-      .catch((error) => console.error(error))
-    return resultNumber
+    try {
+      const response = await fetch(`${http}://${completeHost}/admin/nbsVideos`, requestOptions)
+      return await response.text()
+    } catch (error) {
+      console.error(error)
+      return null
+    }
   }
 
   async function videoName() {
-    let resultList: Array<string> = []
-    await fetch(`${http}://${completeHost}/admin/getVideosList`, requestOptions)
-      .then((response) => response.text())
-      .then((result) => {
-        resultList = JSON.parse(result) as Array<string>
-      })
-      .catch((error) => console.error(error))
-    return (
-      <>
-        <table class={'mt-5'}>
-          <tbody>
-            <tr>
-              <th>Video</th>
-            </tr>
-            {resultList.map((video) => {
-              return (
-                <tr>
+    try {
+      const response = await fetch(`${http}://${completeHost}/admin/getVideosList`, requestOptions)
+      const result = await response.text()
+      const resultList = JSON.parse(result) as Array<string>
+      return (
+        <>
+          <table class={'mt-5'}>
+            <tbody>
+              <tr>
+                <th>Video</th>
+              </tr>
+              {resultList.map((video) => (
+                <tr key={video}>
                   <td>{video}</td>
                 </tr>
-              )
-            })}
-          </tbody>
-        </table>
-      </>
-    )
+              ))}
+            </tbody>
+          </table>
+        </>
+      )
+    } catch (error) {
+      console.error(error)
+      return null
+    }
   }
 
   return (

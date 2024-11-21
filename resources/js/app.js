@@ -31,10 +31,11 @@ window.onload = async function () {
       })
 
       save.addEventListener('click', function () {
+        // eslint-disable-next-line @typescript-eslint/no-shadow
         const video = new File(blob, `video-${dateTime}.mp4`, { type: 'video/mp4' })
         const data = new FormData()
         data.append('video', video)
-        fetch('https://rdd.silvus.me/send', {
+        fetch('http//localhost/send', {
           // HTTP request type
           method: 'POST',
           // Sending our video in our request
@@ -74,7 +75,7 @@ window.onload = async function () {
       bigScreenBack.style.display = 'none'
       const body = new FormData()
       body.append('src', bigScreen.src)
-      fetch('https://rdd.silvus.me/remove', {
+      fetch('http//localhost/remove', {
         method: 'POST',
         body: body,
       }).then(() => {
