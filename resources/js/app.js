@@ -35,7 +35,7 @@ window.onload = async function () {
         const video = new File(blob, `video-${dateTime}.mp4`, { type: 'video/mp4' })
         const data = new FormData()
         data.append('video', video)
-        fetch('http//localhost/send', {
+        fetch('/send', {
           // HTTP request type
           method: 'POST',
           // Sending our video in our request
@@ -75,7 +75,7 @@ window.onload = async function () {
       bigScreenBack.style.display = 'none'
       const body = new FormData()
       body.append('src', bigScreen.src)
-      fetch('http//localhost/remove', {
+      fetch('/remove', {
         method: 'POST',
         body: body,
       }).then(() => {
